@@ -71,7 +71,18 @@ parse_fen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
 
 
 def generate_moves(board):
-    raise NotImplementedError("This function is not implemented yet.")
+    moves = [] # list to store the moves
+    # Iterate through the board and generate moves for each piece
+    for i in range(len(self.board)):
+        for j in range(len(self.board[i])):
+            turn = self.board[i][j]
+            if (turn == "w" and self.whiteToMove) and(turn == "b" and self.whiteToMove):
+                piece = self.board[i][j]
+                if piece == "p":
+                    moves += self.getPawnMoves(i, j)
+                elif piece == "R":
+                    moves += self.getRookMoves(i, j)
+                elif piece == "N":  
 
 
 def apply_move(board, move):
